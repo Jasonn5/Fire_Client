@@ -1,0 +1,27 @@
+.background{
+    background-color: black;
+    color: white;
+    height: 8vh;
+    font-size: 1vw;
+    width: 100vw;
+}
+
+.navLink{    
+    padding-top: 2.5vh;
+}
+
+.login{
+    padding-top: 2vh;
+}
+
+.btn{
+    width: 80%;
+    font-size: 1vw;
+    background-color: rgb(255, 89, 0);
+    color: white;
+}
+
+.navLink:hover{
+    color: rgb(255, 89, 0);
+    cursor: pointer;
+}
