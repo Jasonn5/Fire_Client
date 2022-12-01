@@ -8,7 +8,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InformationComponent } from './Components/information/information.component';
-import { AddFireReportComponent } from './fire-report/components/add-fire-report/add-fire-report.component';
+import { FireReportModule } from './fire-report/fire-report.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { AddFireReportComponent } from './fire-report/components/add-fire-report
     HeaderComponent,
     FooterComponent,
     InformationComponent,
-    AddFireReportComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
+    HttpClientModule,
+    FireReportModule,
     AppRoutingModule
   ],
   providers: [],
