@@ -1,0 +1,39 @@
+.backgroud {
+    background-color: whitesmoke;
+    height: 90vh;
+    width: 100%;
+}
+
+.initButton {
+    width: 80%;
+    background-color: #7894ff;
+    color: white;
+    font-size: 3vh;
+    height: 6vh;
+    border-radius: 40px;
+}
+
+
+.aling-left{
+    float: left;
+}
+
+.aling-right{
+    float: right;
+}
+
+.assitant-chat{
+    border: 5px #7894ff solid;
+    color: black;
+    padding: 1vw ;
+    font-size: 1vw;
+    border-radius: 0px 20px 20px 20px;
+}
+
+.persons-chat{    
+    border: 5px #7894ff solid;
+    color: black;
+    padding: 1vw ;
+    font-size: 1vw;
+    border-radius: 20px 0px 20px 20px;
+}
