@@ -1,12 +1,14 @@
+@import "../../../../styles.scss";
+
 .backgroud {
     background-color: whitesmoke;
-    height: 90vh;
+    min-height: 90vh;
     width: 100%;
 }
 
 .initButton {
     width: 80%;
-    background-color: #7894ff;
+    background-color: #d90d0a;
     color: white;
     font-size: 3vh;
     height: 6vh;
@@ -23,7 +25,7 @@
 }
 
 .assitant-chat{
-    border: 5px #7894ff solid;
+    border: 5px #d90d0a solid;
     color: black;
     padding: 1vw ;
     font-size: 1vw;
@@ -31,9 +33,33 @@
 }
 
 .persons-chat{    
-    border: 5px #7894ff solid;
+    border: 5px #d90d0a solid;
     color: black;
     padding: 1vw ;
     font-size: 1vw;
     border-radius: 20px 0px 20px 20px;
+}
+
+.emergency-type-icons{
+    font-size: 1.5vw;
+}
+
+.emergency-button{
+    margin: 0 0.75vw;
+    width: 5vw;
+    height: 5vw;    
+}
+
+.emergency-button:hover{
+    background-color: $secondary-color;
+    color: white;
+}
+
+agm-map {
+    height: 30vh;
+    width: 40vw;
+}
+
+.get-phone-number{
+    padding-top: 30vh;
 }

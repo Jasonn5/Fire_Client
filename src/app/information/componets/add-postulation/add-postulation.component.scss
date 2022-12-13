@@ -1,0 +1,14 @@
+@import "../../../../styles.scss";
+
+input{
+    border: none;
+    border-bottom: 2px solid $secondary-color;
+}
+
+.row{
+    padding-top: 5vh;
+}
+
+.send-icon{
+    font-size: 1.5vw;
+}

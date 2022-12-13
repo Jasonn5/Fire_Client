@@ -1,0 +1,28 @@
+<div class="row">
+    <h3><strong>Se parte de GEOS</strong></h3>
+    <form [formGroup]="postulationForm" (ngSubmit)="addPostulation()">
+        <div class="row">
+            <label class="pl-3"><b><b class="required-field">*</b> Nombre del postulante:</b></label>
+            <div class="input-group px-3">
+                <input type="text" class="form-control" formControlName="name" placeholder="Nombre Completo">
+            </div>
+        </div>
+        <div class="row">
+            <label class="pl-3"> <b><b class="required-field">*</b> Número de Contacto:</b></label>
+            <div class="input-group px-3">
+                <input type="number" class="form-control" formControlName="phoneNumber" placeholder="Ej. 77990044">
+            </div>
+        </div>
+        <div class="row">
+            <label class="pl-3"> <b><b class="required-field">*</b> Motivo de la posutulación:</b></label>
+            <div class="input-group px-3">
+                <input type="text" class="form-control" formControlName="reason" placeholder="Motivo">
+            </div>
+        </div>
+        <div class="text-right pt-5">
+            <button type="submit" [disabled]="!postulationForm.valid" [ngClass]="postulationForm.valid?'enabled':'disabled'"
+                class="btn">
+                <fa-icon [icon]="faArrowRight" class="send-icon"></fa-icon></button>
+        </div>
+    </form>
+</div>

@@ -8,15 +8,53 @@
                 <div class="row">
                     <div class="assitant-chat">Buenas Cual es su emergencia</div>
                 </div>
-                <div class="row aling-right">
-                    
-                    <div class="persons-chat">Buenas Cual es su emergencia</div>
-                </div>
-                <div class="row pt-5 init-row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                <div class="aling-right">
+                    <div class="row">
+                        <button class="emergency-button" (click)="selectEmergencyType()">
+                            <fa-icon [icon]="faFire" class="emergency-type-icons"></fa-icon>
+                            <div>Incendio</div>
+                        </button>
+                        <button class="emergency-button" (click)="selectEmergencyType()">
+                            <fa-icon [icon]="faPaw" class="emergency-type-icons"></fa-icon>
+                            <div>Rescate</div>
+                        </button>
+                        <button class="emergency-button" (click)="selectEmergencyType()">
+                            <fa-icon [icon]="faExclamationTriangle" class="emergency-type-icons"></fa-icon>
+                            <div>Desastre</div>
+                        </button>
                     </div>
-                    <div class="col-md-4"></div>
+                </div>
+            </div>
+            <div class="container pt-5" *ngIf="isEmergencyTypePassed">
+                <div class="row">
+                    <div class="assitant-chat">Cual es su ubicacion</div>
+                </div>
+                <div class="aling-right">
+                    <div class="row">                        
+                        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClicked($event)"
+                            [streetViewControl]="false" [styles]="styles">
+                            <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true"
+                                (dragEnd)="markerDragEnd($event)">
+                            </agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+            </div>
+            <div class="container get-phone-number" *ngIf="isLocationSelected">
+                <div class="row">
+                    <div class="assitant-chat">Numero de contacto</div>
+                </div>
+                <div class="aling-right">
+                    <div class="row">      
+                        <input type="text" class="phone-number">
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5" *ngIf="isLocationSelected">
+                <div class="aling-right">
+                    <div class="row">
+                        <button (click)="sendFireReport()">Enviar</button>
+                    </div>
                 </div>
             </div>
         </div>

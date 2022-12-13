@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,25 +8,31 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { InformationComponent } from './Components/information/information.component';
 import { FireReportModule } from './fire-report/fire-report.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { InformationModule } from './information/information.module';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    InformationComponent,
   ],
   imports: [
     BrowserModule,
+    AuthenticationModule,
+    AgmCoreModule.forRoot({ apiKey: environment.API_KEY }),
     NgbModule,
     FontAwesomeModule,
     HttpClientModule,
     FireReportModule,
+    InformationModule,
     AppRoutingModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

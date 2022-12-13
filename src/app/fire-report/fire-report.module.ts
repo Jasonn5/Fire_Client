@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddFireReportComponent } from './components/add-fire-report/add-fire-report.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -14,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbModule,    
     FontAwesomeModule,
+    AgmCoreModule,
   ]
 })
 export class FireReportModule { }

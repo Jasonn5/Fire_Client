@@ -1,8 +1,10 @@
+@import "../../../styles.scss";
+
 .background{
-    background-color: #000000;
+    background-color: $primary-color;
     color: #ffffff;
     height: 10vh;
-    font-size: 1vw;
+    font-size: 1.3vw;
 }
 
 .navLink{    
@@ -15,12 +17,12 @@
 
 .btn{
     width: 80%;
-    font-size: 1vw;
-    background-color: #7894ff;
+    font-size: 1.3vw;
+    background-color: $secondary-color;
     color: white;
 }
 
 .navLink:hover{
-    color: #ff5900;
+    color: $secondary-color;
     cursor: pointer;
 }

@@ -2,3 +2,20 @@
 body{
     overflow-x: hidden;
  }
+
+.required-field{
+    color: #d90d0a;
+}
+
+.enabled{
+    background-color: #d90d0a;
+    color: #fff;
+}
+
+.disabled{
+    background-color: #676767;
+    color: #fff;
+}
+
+ $primary-color: #676767;
+ $secondary-color: #d90d0a;
