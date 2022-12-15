@@ -63,3 +63,17 @@ agm-map {
 .get-phone-number{
     padding-top: 30vh;
 }
+
+.btn{
+    width: 100%;
+    font-size: 1.3vw;
+    background-color: $secondary-color;
+    color: white;
+}
+
+input{
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid $secondary-color;
+}
+

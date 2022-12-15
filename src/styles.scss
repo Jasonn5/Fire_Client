@@ -1,21 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     overflow-x: hidden;
- }
+}
 
-.required-field{
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #d90d0a;
+    border-radius: 5px;
+}
+
+.required-field {
     color: #d90d0a;
 }
 
-.enabled{
+.enabled {
     background-color: #d90d0a;
     color: #fff;
 }
 
-.disabled{
+.disabled {
     background-color: #676767;
     color: #fff;
 }
 
- $primary-color: #676767;
- $secondary-color: #d90d0a;
+$primary-color: #676767;
+$secondary-color: #d90d0a;

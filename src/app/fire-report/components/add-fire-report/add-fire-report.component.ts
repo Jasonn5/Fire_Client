@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faRockrms } from '@fortawesome/free-brands-svg-icons';
 import { faExclamationTriangle, faFire, faPaw } from '@fortawesome/free-solid-svg-icons';
 import { FireReport } from 'src/app/models/fire-report';
+import { EmergencyType } from '../../pipes/emergency-type.pipe';
 import { FireReportService } from '../../services/fire-report.service';
 
 @Component({
@@ -20,10 +21,16 @@ export class AddFireReportComponent implements OnInit {
   public lng: number = -66.159048;
   public zoom: number = 15;
   public styles: any;
+  public phonenumber = ""; 
+  public emergencyTypeSelected = 0;
+  public location = "";
+  public placeId = ""
 
-  constructor(private fireReportService: FireReportService) { }
+  constructor(private fireReportService: FireReportService,
+    private emergencyType: EmergencyType,) { }
 
-  ngOnInit(): void {this.styles = [
+  ngOnInit(): void {
+    this.styles = [
     {
       "featureType": "poi.business",
       "elementType": "all",
@@ -77,8 +84,9 @@ export class AddFireReportComponent implements OnInit {
     this.lng = $event.coords.lng;
   }
 
-  selectEmergencyType(){
+  selectEmergencyType(emergencyType : number){
     this.isEmergencyTypePassed = true;
+    this.emergencyTypeSelected = emergencyType
   }
 
   getPhoneNumber(){
@@ -86,24 +94,23 @@ export class AddFireReportComponent implements OnInit {
   }
 
   sendFireReport() {
-    var date = new Date()
-    this.fireReport.date = date;
-    this.fireReport.emergencyType =1;
-    this.fireReport.extraInstructions = "Holas";
-    this.fireReport.phoneNumber = "77904336";
-    this.fireReport.location = "locatin";
+    this.fireReport.emergencyType = this.emergencyTypeSelected ;
+    this.fireReport.phoneNumber = this.phonenumber;
+    this.location ="https://www.google.com/maps/@" + this.lat + ","+ this.lng + ","+ this.zoom+ "z";
+    this.fireReport.location = this.location;
+
 
     this.fireReportService.addFireReport(this.fireReport).subscribe(()=>{
       this.sendPostulation();
-      alert("Reporte enviado Correctamente");
-      
+      alert("Reporte enviado Correctamente");      
     });
   }
 
   sendPostulation() {
-    var message = `Quiero reportar un *Incendio*`;
-    message += `%0a%0a*Ubicaion:* https://www.google.com/maps/@-17.4082544,-66.1519264,18z`;
-    message += `%0a%0a*Numero de Contacto:* 77904336`;
+    var emergencyType = this.emergencyType.transform(this.emergencyTypeSelected);
+    var message = `Quiero reportar un *${emergencyType}*`;
+    message += `%0a%0a*Ubicaion:* ${this.location}`;
+    message += `%0a%0a*Numero de Contacto:* ${this.phonenumber}`;
     window.open(`https://api.whatsapp.com/send?phone=${60797901}&text=${message}`, '_system');
   }  
 }
