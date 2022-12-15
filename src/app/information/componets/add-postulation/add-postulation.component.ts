@@ -28,7 +28,7 @@ export class AddPostulationComponent implements OnInit {
   private buildForm() {
     this.postulationForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
-      phoneNumber: ['', [Validators.required, Validators.minLength(7), Validators.pattern(/^[0-9]+$/)]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(/^[0-9]+$/)]],
       reason: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]]
     });
   }
@@ -43,9 +43,9 @@ export class AddPostulationComponent implements OnInit {
 
   sendPostulation() {
     var message = `Muy buenas quisiera postularme al grupo`;
-    message += `%0a%0a*GEOS mi nombre es:*${this.postulationForm.value.name}`;
+    message += `%0a%0a*Mi nombre es:*${this.postulationForm.value.name}`;
     message += `%0a%0a*Motivo:* ${this.postulationForm.value.reason}`;
-    message += `%0a%0a*Numero de Contacto:* ${this.postulationForm.value.phoneNumber}`;
+    message += `%0a%0a*Número de Contacto:* ${this.postulationForm.value.phoneNumber}`;
     window.open(`https://api.whatsapp.com/send?phone=${60797901}&text=${message}`, '_system');
   }
 }

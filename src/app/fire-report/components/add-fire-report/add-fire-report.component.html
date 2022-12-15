@@ -1,7 +1,9 @@
 <div class="backgroud">
     <div class="row pt-5">
         <div class="col-md-2  text-center">
-            <button class="btn text-center initButton" (click)="initFireReport()">Iniciar Nuevo</button>
+            <div class="container">
+                <button class="btn text-center initButton" (click)="initFireReport()">Iniciar Nuevo</button>
+            </div>
         </div>
         <div class="col-md-10">
             <div class="container pt-5">
@@ -46,7 +48,7 @@
                 </div>
                 <div class="aling-right">
                     <div class="row">      
-                        <input type="number" class="phone-number" [(ngModel)]="phonenumber" placeholder="Ej. 77990044">
+                        <input type="text" class="phone-number" [(ngModel)]="phonenumber" placeholder="Ej. 77990044" maxlength="8">
                     </div>
                 </div>
             </div>
