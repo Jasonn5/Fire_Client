@@ -5,7 +5,11 @@
 export const environment = {
   production: false,
   BACK_END_HOST: 'https://localhost:44376/api/',
-  API_KEY: 'AIzaSyBEJ-2v7ewQyGscnXbsKv1y7jMn5qKm64E',
+  API_KEY: '',
+  ACCES_KEY_ID: '',
+  SECRET_ACCESS_KEY: '',
+  REGION: '',
+  BUCKET_NAME: '',
 };
 
 /*

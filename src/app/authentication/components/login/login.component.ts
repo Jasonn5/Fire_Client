@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
     this.auth.login(login.username, login.password).subscribe(
       () => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/view-releases']);
         this.spinner.hide();
       },
       error => {        
@@ -57,13 +57,5 @@ export class LoginComponent implements OnInit {
     if (error.Password) {
       return error.Password[0];
     }
-  }
-
-  get username() {
-    return this.loginForm.get('username');
-  }
-
-  get password() {
-    return this.loginForm.get('password');
   }
 }

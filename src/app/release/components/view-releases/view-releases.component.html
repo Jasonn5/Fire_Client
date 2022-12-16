@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+            <div class="row pb-5" *ngFor="let release of releases">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row release">
+                            <div class="col-md-2 fire-report-photo">
+                                <img src="../../../../assets/images/non_image.png">
+                            </div>
+                            <div class="col-md-4 pl-5">
+                                <div class="row">
+                                    <h4>{{release.title}}</h4>
+                                </div>
+                                <div class="row">{{release.date | date:'dd/MM/yyyy'}}</div>
+                                <div class="row">{{release.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" *ngIf="isAdmin">
+            <button class="btn" (click)="createRelease()">Crear Nuevo</button>
+        </div>
+    </div>
+</div>

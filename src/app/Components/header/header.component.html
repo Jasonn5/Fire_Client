@@ -5,7 +5,7 @@
                 <fa-icon [icon]="faChat" class="social-media-icons-facebook"></fa-icon> Asistente
             </div>
         </div>
-        <div class="col-md-3 navLink">
+        <div class="col-md-3 navLink" [routerLink]="['/view-releases']">
             <div class="input-group-addon facebook-icon">
                 <fa-icon [icon]="faHouse" class="social-media-icons-facebook"></fa-icon> Publicaciones
             </div>
@@ -16,5 +16,7 @@
             </div>
         </div>
         <div class="col-md-3 login">
+            <button class="btn" (click)="login()">{{text}}</button>
+        </div>
     </div>
 </div>

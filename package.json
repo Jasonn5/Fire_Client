@@ -24,6 +24,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.4",
+    "aws-sdk": "^2.786.0",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.1",
     "jwt-decode": "^3.1.2",

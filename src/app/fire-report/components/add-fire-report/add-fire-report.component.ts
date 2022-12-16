@@ -109,7 +109,7 @@ export class AddFireReportComponent implements OnInit {
   sendPostulation() {
     var emergencyType = this.emergencyType.transform(this.emergencyTypeSelected);
     var message = `Quiero reportar un *${emergencyType}*`;
-    message += `%0a%0a*Ubicaion:* ${this.location}`;
+    message += `%0a%0a*Ubicación:* ${this.location}`;
     message += `%0a%0a*Numero de Contacto:* ${this.phonenumber}`;
     window.open(`https://api.whatsapp.com/send?phone=${60797901}&text=${message}`, '_system');
   }  

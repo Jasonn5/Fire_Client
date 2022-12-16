@@ -14,6 +14,9 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { InformationModule } from './information/information.module';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
+import { ReleaseModule } from './release/release.module';
+import { UploadService } from './services/upload.service';
+import { httpInterceptorProviders } from './authentication/http-interceptors';
 
 @NgModule({
   declarations: [
@@ -30,10 +33,11 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     FireReportModule,
     InformationModule,
+    ReleaseModule,
     AppRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

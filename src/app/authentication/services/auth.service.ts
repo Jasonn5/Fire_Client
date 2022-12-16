@@ -11,13 +11,12 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
+  public token : any
   constructor(
     private http: HttpClient,
     private router: Router,
     private jwtDecodeService: JwtDecodeService
-  ) { 
-     jwtDecodeService = new JwtDecodeService
-    
+  ) {     
   }
 
   isAuthenticated(): boolean {
@@ -42,12 +41,12 @@ export class AuthService {
     return this.http.post<any>(environment.BACK_END_HOST + 'users/authenticate', user, reqHeader)
       .pipe(
         map(user => {
-          var token = this.jwtDecodeService.decodeToken(user.token);
+          this.token = this.jwtDecodeService.decodeToken(user.token);
           localStorage.setItem('token', user.token);
-         /*  localStorage.setItem('username', user.username);
-          localStorage.setItem('roles', this.jwtDecodeService.decodeToken(user.token)?['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
-          localStorage.setItem('userid', this.jwtDecodeService.decodeToken(user.token)?['user_id']);
-          localStorage.setItem('expires', this.jwtDecodeService.decodeToken(user.token)?['exp']); */
+          localStorage.setItem('username', user.username);
+          localStorage.setItem('roles', this.token['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
+          localStorage.setItem('userid', this.token['user_id']);
+          localStorage.setItem('expires', this.token['exp']);
 
           return true;
         })

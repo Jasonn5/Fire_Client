@@ -1,39 +1,15 @@
-nb-card {
-    margin-bottom: 0px;
-    height: 100%;
-}
-
-.auth-block {
-    display: block;
-    max-width: 35rem;
-    margin: auto;
-}
-
-.action-Link {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    width: 18rem;
-    margin: auto;
-}
-
+@import "../../../../styles.scss";
 .card{
     margin-top: 20vh;
-    border-color: #00778A;    
+    border-color: $secondary-color;    
 }
 
 .card-title{
-    color: #00778A;
+    color: $secondary-color;
 }
 
 .btn-primary{
-    background-color: #00778A;
+    background-color: $secondary-color;
     border: none;
     font-size: 1.2rem;
 }

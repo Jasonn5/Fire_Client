@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Crear Nueva Publicación</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row pb-3">
+                <div class="col-md-3">
+                    <label><b>Titulo</b></label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form" [(ngModel)]="title">
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-md-3">
+                    <label><b>Descripción</b></label>
+                </div>
+                <div class="col-md-9">
+                    <textarea class="form" maxlength="450" [(ngModel)]="description"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn enabled mr-2" (click)="saveChanges()">Crear</button>
+        <button type="button" class="btn btn-secondary" (click)="activeModal.close(false)">Cancelar</button>
+    </div>
+
+</div>
