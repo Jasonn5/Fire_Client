@@ -42,9 +42,9 @@ pipeline {
 
             {
 
-                git 'https://github.com/Jasonn5/Fire_Client'
+                git 'https://github.com/Jasonn5/Fire_Client.git'
 
-                //sh 'npm install'
+                sh 'npm install'
 
                 dir('/src')
 
