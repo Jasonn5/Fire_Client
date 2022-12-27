@@ -32,8 +32,6 @@ pipeline {
 
     {
 
-
-
         stage('install')
 
         {
@@ -44,7 +42,7 @@ pipeline {
 
                 git 'https://github.com/Jasonn5/Fire_Client'
 
-                //sh 'npm install'
+                bat 'npm install'
 
                 dir('/src')
 
@@ -56,12 +54,10 @@ pipeline {
 
             }
 
-        }
+        }
 
+    }
 
-
-    }
-
-
+   
 
 }
