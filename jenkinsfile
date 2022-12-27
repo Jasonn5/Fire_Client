@@ -42,7 +42,7 @@ pipeline {
 
             {
 
-                git branch: 'main', url: 'https://github.com/Jasonn5/Fire_Client'
+                git 'https://github.com/Jasonn5/Fire_Client'
 
                 sh 'npm install'
 
