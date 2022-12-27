@@ -42,7 +42,7 @@ pipeline {
 
                 git 'https://github.com/Jasonn5/Fire_Client'
 
-                bat 'npm install'
+                //bat 'npm install'
 
                 dir('/src')
 
