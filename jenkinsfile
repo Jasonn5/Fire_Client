@@ -1,0 +1,67 @@
+pipeline {
+
+    agent any
+
+
+
+    tools {
+
+    nodejs "nodeAngular"
+
+    }
+
+
+
+    parameters {
+
+        string (name:'container_name', defaultValue:'Pagina web', description:'Nombre del contenedor')
+
+
+
+        string (name:'image_name', defaultValue:'Pagina img', description:'Nombre de la image contenedor')
+
+
+
+        string (name:'container_port', defaultValue: '80', description:'Puerto que se  usa')
+
+    }
+
+
+
+    stages
+
+    {
+
+
+
+        stage('install')
+
+        {
+
+            steps
+
+            {
+
+                git 'https://github.com/Jasonn5/Fire_Client'
+
+                //sh 'npm install'
+
+                dir('/src')
+
+                {
+
+                // some block
+
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+
+
+}
