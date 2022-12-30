@@ -30,6 +30,7 @@
     padding: 1vw ;
     font-size: 1vw;
     border-radius: 0px 20px 20px 20px;
+    width: 50%;
 }
 
 .persons-chat{    
@@ -77,3 +78,6 @@ input{
     border-bottom: 2px solid $secondary-color;
 }
 
+.row{
+    padding-bottom: 2vh;
+}

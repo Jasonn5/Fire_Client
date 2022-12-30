@@ -82,6 +82,7 @@ export class AddFireReportComponent implements OnInit {
   markerDragEnd($event: any) {
     this.lat = $event.coords.lat;
     this.lng = $event.coords.lng;
+    this.getPhoneNumber();
   }
 
   selectEmergencyType(emergencyType : number){
@@ -97,7 +98,7 @@ export class AddFireReportComponent implements OnInit {
     this.fireReport.emergencyType = this.emergencyTypeSelected ;
     this.fireReport.phoneNumber = this.phonenumber;
     this.location ="https://www.google.com/maps/@" + this.lat + ","+ this.lng + ","+ this.zoom+ "z";
-    this.fireReport.location = this.location;
+    this.fireReport.location = this.location; debugger;
 
 
     this.fireReportService.addFireReport(this.fireReport).subscribe(()=>{
