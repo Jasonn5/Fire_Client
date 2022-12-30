@@ -22,8 +22,8 @@ export class AuthGuardService {
       return false;
     }
 
-    if (route.data.roles) {
-      var splittedRoles = route.data.roles.split(",");
+    if (route.data["roles"]) {
+      var splittedRoles = route.data["roles"].split(",");
       var result = splittedRoles.some((r:any) => this.auth.getRoles().includes(r))
 
       if (!result) {

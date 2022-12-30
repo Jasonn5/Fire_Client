@@ -7,20 +7,12 @@
     color: white;
 }
 
-.release{
-    width: 105vw;
-}
 
 .fire-report-photo {
-    width: 100%;
+    width: auto;
     height: 30vh;
     background: #000000;
     overflow: hidden;
-}
-
-.fire-report-photo img {
-    width: 100%;
-    height: auto;
 }
 
 @supports (object-fit: cover) {
